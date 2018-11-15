@@ -1,0 +1,25 @@
+-------
+Parte 1
+-------
+
+Crear un CRUD para Cliente
+
+* id
+* nombre
+* direccion
+* telefono
+
+Representar un formulario de alta y una tabla de consulta y edicion en una unica escena.
+
+Implementar arquitectura en capas, no empleando el API de JavaFX en el Back.
+
+Implmentar la persistencia en memoria con un Map que represente la tabla de clientes.
+
+-------
+Parte 2
+-------
+
+Incluir un ToogleButton para el cambio de idioma del formulario. Incluir español e ingles como idiomas.
+
+Definir estilos para mostrar las etiquetas del formulario en rojo, los textos de los textfield en azul.
+

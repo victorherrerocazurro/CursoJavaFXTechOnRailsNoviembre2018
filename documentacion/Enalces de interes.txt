@@ -1,0 +1,16 @@
+---------
+Descargas
+---------
+
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+http://efxclipse.bestsolution.at/install.html#all-in-one
+
+https://www.oracle.com/technetwork/java/javafxscenebuilder-1x-archive-2199384.html
+
+-------------
+Documentacion
+-------------
+
+https://docs.oracle.com/javafx/2/
+
