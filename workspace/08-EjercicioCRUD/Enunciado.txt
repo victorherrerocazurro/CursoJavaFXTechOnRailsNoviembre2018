@@ -23,3 +23,11 @@ Incluir un ToogleButton para el cambio de idioma del formulario. Incluir español
 
 Definir estilos para mostrar las etiquetas del formulario en rojo, los textos de los textfield en azul.
 
+-------
+Parte 3
+-------
+
+Crear una ventana no modal para el formulario de alta accesible desde un boton en la pantalla principal
+
+Añadir un check que altere el arbol de la pantalla principal mostrando la tabla de clientes.
+
