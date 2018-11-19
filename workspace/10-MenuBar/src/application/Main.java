@@ -5,8 +5,10 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -15,7 +17,12 @@ import javafx.scene.control.RadioMenuItem;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.ContextMenuEvent;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -34,6 +41,18 @@ public class Main extends Application {
 			MenuBar menuBar = new MenuBar();
 			label = new Label("");
 
+			ContextMenu cm = new ContextMenu();
+
+			MenuItem cmItem1 = new MenuItem("Copy");
+
+			cm.getItems().add(cmItem1);
+
+			label.setOnContextMenuRequested(new EventHandler<ContextMenuEvent>() {
+				@Override
+				public void handle(ContextMenuEvent e) {
+					cm.show((Node)e.getSource(), e.getScreenX(), e.getScreenY());
+				}
+			});
 
 			// --- Menu File
 			Menu menuFile = new Menu("File");

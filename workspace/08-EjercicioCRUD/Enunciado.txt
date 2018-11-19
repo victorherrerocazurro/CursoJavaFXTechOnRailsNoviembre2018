@@ -31,3 +31,18 @@ Crear una ventana no modal para el formulario de alta accesible desde un boton e
 
 Añadir un check que altere el arbol de la pantalla principal mostrando la tabla de clientes.
 
+-------
+Parte 4
+-------
+
+Definir un menu con las opciones principales: "clientes" y "facturas", dentro de clientes las opciones: "Add", "Remove" y "Edit".
+
+Incorporar la logica del anterior paso del boton que abre el formulario de alta, a la opcion del menu de "Add"
+
+-------
+Parte 5
+-------
+
+Añadir opcion de Menu, que represente los el numero de clientes por la categoria direccion, empleando un BarChart.
+
+Adicionalmente se podria incluir la fecha de alta del cliente y representar con series la evolucion de los clientes por año
