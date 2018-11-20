@@ -9,8 +9,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.BorderPane;
 
 public class SampleController implements Initializable {
+	//El objeto le recibimos por inyeccion, no somo responsables de construirlo
 	@FXML
-	private BorderPane root = new BorderPane();
+	private BorderPane root;// = new BorderPane();
 
 	@FXML
 	public void procesarPulsarBoton(ActionEvent event){

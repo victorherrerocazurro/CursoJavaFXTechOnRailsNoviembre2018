@@ -4,7 +4,6 @@ import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
@@ -15,11 +14,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@Override
 	public void start(Stage stage) {
-		Group root = new Group();
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.setTitle("Progress Controls");
-
 		final Slider slider = new Slider();
 		slider.setMin(0);
 		slider.setMax(50);
@@ -38,7 +32,10 @@ public class Main extends Application {
 		hb.setSpacing(5);
 		hb.setAlignment(Pos.CENTER);
 		hb.getChildren().addAll(slider, pb, pi);
-		scene.setRoot(hb);
+
+		Scene scene = new Scene(hb);
+		stage.setScene(scene);
+		stage.setTitle("Progress Controls");
 		stage.show();
 	}
 

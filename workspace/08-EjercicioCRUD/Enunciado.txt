@@ -46,3 +46,21 @@ Parte 5
 Añadir opcion de Menu, que represente los el numero de clientes por la categoria direccion, empleando un BarChart.
 
 Adicionalmente se podria incluir la fecha de alta del cliente y representar con series la evolucion de los clientes por año
+
+-------
+Parte 6
+-------
+
+Añadir la opcion de menu, de salir, que muestre un dialogo de validacion para finalizar.
+
+-------
+Parte 7
+-------
+
+Añadir un icono con Shapes, 3 circulos que se solapan y un texto con el nombre de la empresa
+
+-------
+Parte 8
+-------
+
+Añadir una transformacion al icono anterior
