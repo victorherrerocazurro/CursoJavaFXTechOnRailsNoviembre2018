@@ -63,4 +63,4 @@ Añadir un icono con Shapes, 3 circulos que se solapan y un texto con el nombre d
 Parte 8
 -------
 
-Añadir una transformacion al icono anterior
+Añadir una animacion al icono anterior, que realice una rotacion al pasar el raton por encima

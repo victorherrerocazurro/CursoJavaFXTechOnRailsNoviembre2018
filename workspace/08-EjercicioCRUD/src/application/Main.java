@@ -1,5 +1,10 @@
 package application;
-	
+
+import java.util.HashMap;
+
+import application.back.MemoriaClienteDao;
+import application.back.SimpleService;
+import application.back.entities.Cliente;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -11,7 +16,17 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
+
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Sample.fxml"));
+
+			BorderPane root = (BorderPane)fxmlLoader.load();
+
+			FormularioClienteController controller = (FormularioClienteController) fxmlLoader.getController();
+
+			//Se puede delegar en un framework como Spring
+			HashMap<Long, Cliente> tablaClientes = new HashMap<>();
+			controller.setService(new SimpleService(new MemoriaClienteDao(tablaClientes)));
+
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -20,7 +35,7 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
