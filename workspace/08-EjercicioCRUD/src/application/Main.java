@@ -1,15 +1,17 @@
 package application;
 
 import java.util.HashMap;
+import java.util.ResourceBundle;
 
 import application.back.MemoriaClienteDao;
 import application.back.SimpleService;
 import application.back.entities.Cliente;
+import application.front.MainController;
 import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
@@ -17,15 +19,31 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Sample.fxml"));
+			ResourceBundle mensajes = ResourceBundle.getBundle("/application/front/mensajes");
 
-			BorderPane root = (BorderPane)fxmlLoader.load();
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Main.fxml"), mensajes);
 
-			FormularioClienteController controller = (FormularioClienteController) fxmlLoader.getController();
+			Parent root = fxmlLoader.load();
+
+			/*Desde Aqui*/
+
+			HashMap<Long, Cliente> tablaClientes = new HashMap<>();
+
+			MemoriaClienteDao clienteDao = new MemoriaClienteDao(tablaClientes);
+
+			/*Fuesen instancias ocultas, no referenciadas desde otro sitio que no sea el servicio*/
+
+			SimpleService service = new SimpleService(clienteDao);
+
+			MainController mainController = (MainController)fxmlLoader.getController();
+
+			mainController.setService(service);
+
+			/*FormularioClienteController controller = (FormularioClienteController) fxmlLoader.getController();
 
 			//Se puede delegar en un framework como Spring
-			HashMap<Long, Cliente> tablaClientes = new HashMap<>();
-			controller.setService(new SimpleService(new MemoriaClienteDao(tablaClientes)));
+
+			controller.setService(service);*/
 
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

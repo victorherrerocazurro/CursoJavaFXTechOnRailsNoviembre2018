@@ -1,6 +1,7 @@
 package application.back;
 
 import java.util.Collection;
+import java.util.Map;
 
 import application.back.entities.Cliente;
 
@@ -28,5 +29,11 @@ public class SimpleService implements Service{
 	@Override
 	public Collection<Cliente> obtenerTodosLosCliente() {
 		return clienteDao.select();
+	}
+
+	@Override
+	public Map<String, Integer> obtenerClientesPorDireccion() {
+		// TODO queda pendiente de implementar
+		return null;
 	}
 }
